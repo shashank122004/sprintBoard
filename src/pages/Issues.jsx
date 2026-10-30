@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import StatusBadge from '../components/StatusBadge';
+import PriorityBadge from '../components/PriorityBadge';
 
 const SAMPLE_ISSUES = [
   { id: '1', title: 'Fix login button alignment', description: 'Button overlaps on mobile.', status: 'Open', priority: 'Medium' },
@@ -18,7 +20,8 @@ export default function Issues() {
           <li key={issue.id} className="card">
             <strong>{issue.title}</strong>
             <p>{issue.description}</p>
-            <span>{issue.status} · {issue.priority}</span>
+            <StatusBadge status={issue.status} />
+            <PriorityBadge priority={issue.priority} />
           </li>
         ))}
       </ul>
